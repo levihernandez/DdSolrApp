@@ -1,0 +1,74 @@
+{
+	"technology": [
+		{
+			"name": "datadog",
+			"alias": "datadog-agent",
+			"tech_type": "agent",
+			"tech_conf": "datatog.yaml",
+			"tech_confdir": "/etc/datadog-agent",
+			"tech_firstconf": "/etc/datadog-agent/datatog.yaml",
+			"tech_version": "7.3.1",
+			"os_support": [
+				{
+					"name": "linux",
+					"distrib_id": "Ubuntu",
+					"distrib_release": 16.04,
+					"distrib_codename": "xenial",
+					"distrib_description": "Ubuntu 16.04.3 LTS",
+					"version": "16.04.3 LTS (Xenial Xerus)",
+					"id": "ubuntu",
+					"id_like": "debian",
+					"pretty_name": "Ubuntu 16.04.3 LTS",
+					"version_id": "16.04",
+					"home_url": "http://www.ubuntu.com/",
+					"support_url": "http://help.ubuntu.com/",
+					"bug_report_url": "http://bugs.launchpad.net/ubuntu/",
+					"version_codename": "xenial",
+					"ubuntu_codename": "xenial"
+				},
+				{
+					"name": "linux",
+					"distrib_id": "aws",
+					"distrib_release": 16.04,
+					"distrib_codename": "xenial",
+					"distrib_description": "Ubuntu 16.04.3 LTS",
+					"version": "16.04.3 LTS (Xenial Xerus)",
+					"id": "ubuntu",
+					"id_like": "debian",
+					"pretty_name": "Ubuntu 16.04.3 LTS",
+					"version_id": "16.04",
+					"home_url": "http://www.ubuntu.com/",
+					"support_url": "http://help.ubuntu.com/",
+					"bug_report_url": "http://bugs.launchpad.net/ubuntu/",
+					"version_codename": "xenial",
+					"ubuntu_codename": "xenial"
+				},
+				{
+					"name": "linux",
+					"distrib_id": "Debian",
+					"distrib_release": 10.04,
+					"distrib_codename": "xenial",
+					"distrib_description": "Ubuntu 16.04.3 LTS",
+					"version": "16.04.3 LTS (Xenial Xerus)",
+					"id": "ubuntu",
+					"id_like": "debian",
+					"pretty_name": "Ubuntu 16.04.3 LTS",
+					"version_id": "16.04",
+					"home_url": "http://www.ubuntu.com/",
+					"support_url": "http://help.ubuntu.com/",
+					"bug_report_url": "http://bugs.launchpad.net/ubuntu/",
+					"version_codename": "xenial",
+					"ubuntu_codename": "xenial"
+				}
+			]
+		},
+		{
+			"name": "datadog jar",
+			"alias": "dd-java-agent",
+			"tech_type": "agent",
+			"tech_conf": "dd-java-agent.jar",
+			"tech_confdir": "/etc/datadog-agent",
+			"tech_version": "7.3.1"
+		}
+	]
+}

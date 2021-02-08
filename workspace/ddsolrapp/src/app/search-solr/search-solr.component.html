@@ -1,0 +1,44 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button type="submit" class="btn btn-primary" (click)="getSolars(searchBox.value); searchBox.value=''">Search</button>
+    </div>
+    <input type="text" class="form-control" placeholder="technology.alias:datadog-agent technology.tech_version:6.2.0 AND technology.os_support.pretty_name:Ubuntu* "  aria-label="Search" aria-describedby="button-addon1" #searchBox id="search-box" (input)="search(searchBox.value)">
+  </div>
+
+<div *ngIf="solars">
+    <small> Found ( {{solars.body.response.numFound | json}} ) {{solars.body.responseHeader.params.q | json}}</small>
+    <div class="table-responsive">
+
+
+
+    <table class="table table-striped table-sm" style="width: 100%">
+        <colgroup>
+            <col span="1" style="width: 25%;">
+            <col span="1" style="width: 25%;">
+            <col span="1" style="width: 50%;">
+         </colgroup>
+        <thead>
+        <tr>
+
+            <th>ID</th>
+            <th>Version</th>
+            <th>Record</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of solars.body.response.docs">
+
+            <td>{{item.id | json}}</td>
+            <td>{{item._version_ | json}}</td>
+            <td>
+                <a data-toggle="modal" data-target="#exampleModal" [routerLink]="item.id">
+                    <span class="d-inline-block text-truncate" style="max-width: 400px;">
+                        {{item | jsonStrings}}
+                    </span>
+                </a>
+        </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
