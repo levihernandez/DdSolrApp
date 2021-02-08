@@ -6,7 +6,6 @@ ddenv=testing
 ddservice=solr
 appname=solrsearch
 solrvrsn="8.8.0"
-golavrsn="1.15.8"
 solrport=8983
 anglport=4200
 nodeport=8000
@@ -34,11 +33,6 @@ sudo npm install -g @angular/cli
 sudo npm install -g @angular-devkit/build-angular
 
 cd /home/vagrant/${wksp}
-
-# Install Golang
-wget -O ${workdir}/downloads/go${golavrsn}.${oslower}-${archtype}.tar.gz https://golang.org/dl/${golavrsn}.${oslower}-${archtype}.tar.gz
-sudo tar -C /usr/local -xzf ${workdir}/downloads/go${golavrsn}.${oslower}-${archtype}.tar.gz
-export PATH=$PATH:/usr/local/go/bin
 
 # Install Solr
 wget -O ${workdir}/downloads/solr-${solrvrsn}.tgz https://apache.claz.org/lucene/solr/${solrvrsn}/solr-${solrvrsn}.tgz
@@ -98,5 +92,8 @@ yarn global add @angular/cli
 ng set --global packageManager=yarn
 yarn add express cors bootstrap jquery @datadog/browser-rum
 yarn install
-# Run in a separate terminal: node nodeServer/server.js
-# Run in a separate terminal: ng serve --host 0.0.0.0
+
+echo "---------------------------------------------------------------------------"
+echo "Run in a separate terminal: node nodeServer/server.js"
+echo "Run in a separate terminal: ng serve --host 0.0.0.0"
+echo "---------------------------------------------------------------------------"

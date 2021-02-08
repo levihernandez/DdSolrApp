@@ -33,8 +33,14 @@ sed -i '' '50i\
 ' ${FILE}
 
 sed -i '' '74i\
-\ \ config.vm.provision :shell, path: "/home/vagrant/'${wksp}'/provision.sh", env: {"DATADOG_API_KEY" => "'${ddapikey}'"} "\
+\ \ config.vm.provision "shell", path: "'${wksp}'/provision.sh", env: {"DATADOG_API_KEY" => "'${ddapikey}'"} \
 ' ${FILE}
 
-vagrant up
-vagrant ssh
+echo "---------------------------------------------------------------------------"
+echo "Vagrantfile file created and configured."
+echo "The Vagrantfile takes care of setting up the environment and most of the"
+echo "resources during the initial run. You will need to configure the Datadog "
+echo "agents for JMX, and other tools."
+echo "---------------------------------------------------------------------------"
+echo "Start the VM with: vagrant up"
+echo "Log into the guest host: vagrant ssh"
