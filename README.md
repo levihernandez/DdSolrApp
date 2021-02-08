@@ -8,7 +8,7 @@ The main purpose is to have full correlation from Infra, Traces, Logs, JVM metri
 
 I provide two scripts to get you started very quickly:
 
-* `setup.sh` : create & configure the `Vagrantfile`.
+* `setup.sh "<DATADOG-API-KEY>"` : create & configure the `Vagrantfile`.
 * `workspace/provision.sh`: is registered within the `Vagrantfile`.
   * Download & Install via script:
     * Datadog Agent & `dd-java-agent.jar`

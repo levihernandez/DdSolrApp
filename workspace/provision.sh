@@ -20,7 +20,7 @@ ddjar="/opt/solr/server/lib/dd-java-agent.jar"
 # osinfo=$(cat /etc/*release)
 
 # Save the Datadog API Key in bashrc as an export
-echo "export DATADOG_API_KEY=${ddapikey}" >> ~/.bashrc
+echo "export DATADOG_API_KEY=${ddapikey}" >> /home/vagrant/.bashrc
 
 sudo apt-get update -y
 sudo apt-get install default-jdk -y
