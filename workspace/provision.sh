@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ddapikey=${1}
+ddapikey=${DATADOG_API_KEY}
 wksp=workspace
 ddenv=testing
 ddservice=solr
@@ -78,7 +78,7 @@ curl http://localhost:${solrport}/solr/
 curl "http://localhost:8983/solr/technology/select?facet.field=technology.name&facet.field=technology.os_support.distrib_id&facet=on&fl=technology.name%2Ctechnology.alias%2Ctechnology.tech_type&q=*%3A*"
 
 # Ingest sample data by creating a sample collection core for Solr
-sudo -u solr ${solrhome}/bin/solr solr create -c technology
+sudo -u solr ${solrhome}/bin/solr create -c technology
 
 # Load a sample JSON tech file
 sudo -u solr ${solrhome}/bin/post -c technology ${workdir}/data/technology1.json
@@ -88,6 +88,7 @@ sudo -u solr ${solrhome}/bin/post -c technology ${workdir}/data/technology2.json
 # In this project I use yarn package manager to install dependencies
 # NPM eperienced failures installing packages in a Vagrant machine running on Mac OS
 cd /home/vagrant/${wksp}/${appname}
+
 yarn global add @angular/cli
 ng set --global packageManager=yarn
 yarn add express cors popper.js jquery bootstrap @datadog/browser-rum
