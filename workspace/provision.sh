@@ -99,4 +99,4 @@ ng set --global packageManager=yarn
 yarn add express cors bootstrap jquery @datadog/browser-rum
 yarn install
 # Run in a separate terminal: node nodeServer/server.js
-# Run in a separate terminal: ng serve --host 0.0.0.0 --port 8081
+# Run in a separate terminal: ng serve --host 0.0.0.0

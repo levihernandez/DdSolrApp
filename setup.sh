@@ -33,7 +33,7 @@ sed -i '' '50i\
 ' ${FILE}
 
 sed -i '' '74i\
-\ \ config.vm.provision :shell, path: "provision.sh '${ddapikey}'"\
+\ \ config.vm.provision :shell, path: "/home/vagrant/provision.sh '${ddapikey}'"\
 ' ${FILE}
 
 vagrant up
