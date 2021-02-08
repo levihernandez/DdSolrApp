@@ -4,7 +4,7 @@ ddapikey=${1}
 wksp=workspace
 ddenv=testing
 ddservice=solr
-appname=solrsearch
+appname=ddsolrapp
 solrvrsn="8.8.0"
 solrport=8983
 anglport=4200
@@ -90,7 +90,7 @@ sudo -u solr ${solrhome}/bin/post -c technology ${workdir}/data/technology2.json
 cd /home/vagrant/${wksp}/${appname}
 yarn global add @angular/cli
 ng set --global packageManager=yarn
-yarn add express cors bootstrap jquery @datadog/browser-rum
+yarn add express cors popper.js jquery bootstrap @datadog/browser-rum
 yarn install
 
 echo "---------------------------------------------------------------------------"
