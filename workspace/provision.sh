@@ -25,7 +25,7 @@ echo "export DATADOG_API_KEY=${ddapikey}" >> /home/vagrant/.bashrc
 
 sudo apt-get update -y
 sudo apt-get install default-jdk -y
-sudo apt-get install git -y
+
 
 ## Install NodeJS, NPM, NPK, Yarn, AngularCli # { package: '@angular-devkit/architect@0.1101.4', 
 ## required: { node: '>= 10.13.0', npm: '^6.11.0', yarn: '>= 1.13.0' },
@@ -52,7 +52,6 @@ if test -f "${solrconf}"; then
     echo "${solrconf} has been configured, exiting setup now."
 else
     echo "${solrconf} is being configured now, please wait..."
-    mv ${solrconf}.orig ${solrconf}
 fi
 
 # Download & Install Datadog Agent
@@ -101,10 +100,10 @@ cd /home/vagrant/${wksp}/${appname}
 
 yarn global add @angular/cli
 ng set --global packageManager=yarn
-yarn add express cors popper.js jquery bootstrap @datadog/browser-rum
+yarn add express cors popper.js jquery bootstrap @datadog/browser-rum dd-trace
 yarn install
 
 echo "---------------------------------------------------------------------------"
-echo "Run in a separate terminal: node nodeServer/server.js"
+echo "Run in a separate terminal: node --require dd-trace/init nodeServer/server.js"
 echo "Run in a separate terminal: ng serve --host 0.0.0.0"
 echo "---------------------------------------------------------------------------"

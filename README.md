@@ -32,6 +32,12 @@ Use 2 separate ssh sessions to perform the following:
     * Test Apache Solr with `curl "http://localhost:8983/solr/technology/select?q=*:*`
 * RUM must be instrumented for Angular app server & Node.JS, please the [Datadog RUM](https://app.datadoghq.com/rum) instructions when creating a new app, this will give you complete instructions for your system. Inject the RUM code for your Node.JS + Angular web app.
 
+> Architecture
+
+![DdSolrApp](DdSolrApp.png) [Draw.io - DdSolrApp](DdSolrApp.drawio)
+
+> SolrSearch
+
 Query Apache Solr records through the SolrSearch app by going to `http://localhost:4200/` and using the Datadog Tag approach  to retrieve records. Below is a list of keys that can be used in the interface:
 
 * Single key search: `technology.alias:Datadog`

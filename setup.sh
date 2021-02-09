@@ -17,7 +17,7 @@ else
     echo "${FILE} will be created for the first time."
     vagrant init bento/ubuntu-20.04
     # Create shared dir between local & vagrant hosts
-    mkdir -p ${wksp}/{angular,downloads,solrpkg}
+    mkdir -p ${wksp}/{downloads,solrpkg}
 fi
 
 # Add the following to line 27, where the forwarded port can be enabled
