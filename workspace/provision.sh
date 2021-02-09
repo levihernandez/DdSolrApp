@@ -101,7 +101,7 @@ cd /home/vagrant/${wksp}/${appname}
 
 yarn global add @angular/cli
 ng set --global packageManager=yarn
-yarn add express cors popper.js jquery bootstrap @datadog
+yarn add express cors popper.js jquery bootstrap @datadog/browser-rum
 yarn install
 
 echo "---------------------------------------------------------------------------"
