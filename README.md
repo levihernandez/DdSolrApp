@@ -98,7 +98,7 @@ Query Apache Solr records through the SolrSearch app by going to `http://localho
 * Multiple key search: `technology.alias:Datadog technology.name:datadog`; `technology.alias:Datadog AND technology.name:datadog`;
 * Wildcard search: `technology.alias:Datad*` **Limited to a single wildcard search**
 
-![SolrSearch](SolrSearch.png)
+![SolrSearch](workspace/imgs/SolrSearch.png)
 ```csv
 "id","technology.alias","technology.name","technology.os_support.bug_report_url","technology.os_support.distrib_codename","technology.os_support.distrib_description","technology.os_support.distrib_id","technology.os_support.distrib_release","technology.os_support.home_url","technology.os_support.id","technology.os_support.id_like","technology.os_support.name","technology.os_support.pretty_name","technology.os_support.support_url","technology.os_support.ubuntu_codename","technology.os_support.version","technology.os_support.version_codename","technology.os_support.version_id","technology.tech_conf","technology.tech_confdir","technology.tech_firstconf","technology.tech_type","technology.tech_version"
 ```
