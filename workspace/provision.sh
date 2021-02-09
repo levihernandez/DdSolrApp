@@ -13,7 +13,8 @@ archtype=$(uname -p)
 ostype=$(uname)
 oslower=$( echo ${ostype} | tr '[:upper:]' '[:lower:]')
 workdir=/home/vagrant/${wksp}
-solrconf="/opt/solr/bin/solr.in.sh"
+#solrconf="/opt/solr/bin/solr.in.sh"
+solrconf="/etc/default/solr.in.sh"
 solrhome="/opt/solr"
 ddyaml="/etc/datadog-agent/datadog.yaml"
 ddjar="/opt/solr/server/lib/dd-java-agent.jar"
@@ -41,6 +42,11 @@ cd /home/vagrant/${wksp}
 wget -O ${workdir}/downloads/solr-${solrvrsn}.tgz https://apache.claz.org/lucene/solr/${solrvrsn}/solr-${solrvrsn}.tgz
 tar -xzf ${workdir}/downloads/solr-${solrvrsn}.tgz -C ${workdir}/downloads/
 sudo bash ${workdir}/downloads/solr-${solrvrsn}/bin/install_solr_service.sh ${workdir}/downloads/solr-${solrvrsn}.tgz
+sudo chown -R solr:solr /opt/${solrvrsn}
+
+# See the Solr params loaded after start up
+ps -eaf | grep solr | tr " " "\n"
+
 
 if test -f "${solrconf}"; then
     echo "${solrconf} has been configured, exiting setup now."
@@ -56,6 +62,7 @@ DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=${ddapikey} DD_SITE="datadoghq.com" bash -c 
 sudo wget -O ${ddjar} https://dtdg.co/latest-java-tracer
 
 # Configure Solr
+sudo echo "# Enable JMX RMI_PORT, Enable Datadog APM on Solr start up" >> ${solrconf}
 sudo echo "ENABLE_REMOTE_JMX_OPTS=\"true\"" >> ${solrconf}
 sudo echo "RMI_PORT=18983" >> ${solrconf}
 sudo echo "SOLR_OPTS=\"\$SOLR_OPTS -javaagent:${ddjar}\"" >> ${solrconf}
@@ -63,10 +70,10 @@ sudo echo "SOLR_OPTS=\"\$SOLR_OPTS -Ddd.env=${ddenv}\"" >> ${solrconf}
 sudo echo "SOLR_OPTS=\"\$SOLR_OPTS -Ddd.service=${ddservice}\"" >> ${solrconf}
 
 # Configure datadog.yaml
-sudo sed -i 's/^# env: <environment name>$/env: ${ddenv}/g' ${ddyaml}
+sudo sed -i 's/^# env: <environment name>$/env: '${ddenv}'/g' ${ddyaml}
 sudo sed -i 's/^# apm_config:$/apm_config:/g' ${ddyaml}
 sudo sed -i 's/^  # enabled: true$/    enabled: true/g' ${ddyaml}
-sudo sed -i 's/^  # env: none$/    env: ${ddenv}/g' ${ddyaml}
+sudo sed -i 's/^  # env: none$/    env: '${ddenv}'/g' ${ddyaml}
 
 # Start Solr
 sudo systemctl status solr
@@ -94,7 +101,7 @@ cd /home/vagrant/${wksp}/${appname}
 
 yarn global add @angular/cli
 ng set --global packageManager=yarn
-yarn add express cors popper.js jquery bootstrap @datadog/browser-rum
+yarn add express cors popper.js jquery bootstrap @datadog
 yarn install
 
 echo "---------------------------------------------------------------------------"

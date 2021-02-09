@@ -22,6 +22,8 @@ Once the Vagrant setup has completed, your will be logged into vagrant, in the e
 Use 2 separate ssh sessions to perform the following:
 * Change directory to `cd /home/vagrant/workspace` 
 * Start the Node.JS server: `node nodeServer/server.js`
+* Change directory into the app `cd ddsolrapp`
+* Use yarn to install the npm modules `yarn install`
 * Start the Angular App server: `ng serve --host 0.0.0.0 --port 4200`
     * `--host 0.0.0.0` will allow connections in your local host (outside of Vagrant)
     * `--port 4200` is the Angular port for your web app
