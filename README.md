@@ -34,14 +34,13 @@ logs_enabled: true
 * `/etc/datadog-agent/conf.d/solr.d/conf.yaml` - to enable [Solr integration](https://docs.datadoghq.com/integrations/solr/?tab=host)
 ```yaml
 init_config:
-
     is_jmx: true
     collect_default_metrics: true
 
 instances:
-
   - host: localhost
     port: 18983
+
 logs:
    - type: file
      path: /var/solr/logs/solr.log
