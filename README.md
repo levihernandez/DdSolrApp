@@ -107,8 +107,8 @@ Query Apache Solr records through the SolrSearch app by going to `http://localho
 
 * `solr` - the Solr server
 * `ddsolrapp-http-client` - the API call
-* `ddsolrapp-tcp` - the protocol call from the client
-* `ddsolrapp-dns` - the DNS request call from teh client
+* `ddsolrapp-tcp` - the DD call
+* `ddsolrapp-dns` - the DNS DD request call
 * `nodejs-solr` - the Angular RUM call
 * `ddsolrapp` - the Angular UI
 
