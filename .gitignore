@@ -15,6 +15,7 @@ pubspec.lock
 !.devcontainer/recommended-devcontainer.json
 !.devcontainer/recommended-Dockerfile
 .settings/
+.settings/
 .vscode/launch.json
 .vscode/settings.json
 .vscode/tasks.json
