@@ -113,3 +113,17 @@ Query Apache Solr records through the SolrSearch app by going to `http://localho
 * `ddsolrapp` - the Angular UI
 
 ![Service Map](workspace/imgs/serviceMap.png)
+
+## Unify the Data
+
+The project's data points are now flowing into Datadog throught he different integrations. The dashboard contains a lot of great information needed to create a command center based on the SolrSearch App (Front End) to the Node.JS tracing + searching the Solr server records. 
+
+* Infrastructure: CPU, Memory, Hosts, JVM Heap, Disk
+* Application: traces by service
+* Real User Monitoring - RUM: Session, resources, views, browser
+* Solr: requests, indexes, records
+* Logs: correlation by request type
+* Events: agent information  
+* All correlated elements by time, session, service, or view id
+
+![Dashboard](workspace/imgs/SolrEnd2End.png)
