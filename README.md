@@ -25,7 +25,10 @@ I provide two scripts to get you started very quickly:
 
 * `/etc/datadog-agent/datadog.yaml` - to enable [Application Performance Monitor for Node.JS](https://docs.datadoghq.com/tracing/setup_overview/setup/nodejs/?tab=containers)
 ```yaml
+apm_config:
+  enabled: true
 
+logs_enabled: true
 ```
 
 * `/etc/datadog-agent/conf.d/solr.d/conf.yaml` - to enable [Solr integration](https://docs.datadoghq.com/integrations/solr/?tab=host)
@@ -39,6 +42,15 @@ instances:
 
   - host: localhost
     port: 18983
+logs:
+   - type: file
+     path: /var/solr/logs/solr.log
+     source: solr
+     #  To handle multi line that starts with yyyy-mm-dd use the following pattern
+     log_processing_rules:
+       - type: multi_line
+         pattern: \d{4}\-(0?[1-9]|1[012])\-(0?[1-9]|[12][0-9]|3[01])
+         name: new_log_start_with_date
 ```
 
 * `/etc/datadog-agent/conf.d/jmx.d/conf.yaml` - to enable [JMX](https://docs.datadoghq.com/integrations/java/?tab=host#overview) collection metrics (optional & not covered in this example)
