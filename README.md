@@ -126,5 +126,6 @@ The project's data points are now flowing into Datadog throught he different int
 * Events: agent information  
 * All correlated elements by time, session, service, or view id
 
-[Datadog Dashboard](workspace/imgs/RUM_APM-Solr,Node.JS,Angular--2021-02-09T23_23_56.json)
+> [Datadog Dashboard](workspace/imgs/RUM_APM-Solr,Node.JS,Angular--2021-02-09T23_23_56.json)
+
 ![Dashboard](workspace/imgs/SolrEnd2End.png)
