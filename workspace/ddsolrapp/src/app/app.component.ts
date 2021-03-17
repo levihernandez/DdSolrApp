@@ -13,7 +13,9 @@ datadogRum.init({
     env: 'production',
     version: '1.0.0',
     sampleRate: 100,
-    trackInteractions: true
+    trackInteractions: true,
+    // Enable APM tracing on the RUM transaction
+    allowedTracingOrigins: ["http://localhost"]
 });
 */
 
