@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 /*
 // Create a new RUM Application in Datadog UI: https://app.datadoghq.com/rum/application
-// Copy the npm Code snippet and inject below
+// Overwrite the code, or replace keys, below:
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
