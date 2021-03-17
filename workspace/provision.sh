@@ -97,6 +97,8 @@ sudo -u solr ${solrhome}/bin/post -c technology ${workdir}/data/technology2.json
 # In this project I use yarn package manager to install dependencies
 # NPM eperienced failures installing packages in a Vagrant machine running on Mac OS
 cd /home/vagrant/${wksp}/${appname}
+# Overwrite the Angular entry point TypeScript with datdog-rum.js
+cp /home/vagrant/${wksp}/resources/datadog-rum.js  /home/vagrant/${wksp}/${appname}/src/app/app.component.ts
 
 yarn global add @angular/cli
 ng set --global packageManager=yarn
